@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hello Spuddy</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <img src="images/spuddy.png" alt="Spuddy" class="mini-spuddy">
+    <img src="images/logo.png" alt="Hello Spuddy" class="mini-logo">
+  </div>
+
+  <nav>
+    <a href="#" data-i18n="navHome">Home</a>
+    <a href="#books" data-i18n="navBooks">Books</a>
+    <a href="#about" data-i18n="navAbout">About Spuddy</a>
+    <a href="#coloring" data-i18n="navColoring">Coloring Pages</a>
+    <a href="#contact" data-i18n="navContact">Contact</a>
+  </nav>
+
+  <div class="header-right">
+    <div class="language-switcher">
+      <button onclick="setLanguage('en')">EN</button>
+      <button onclick="setLanguage('pl')">PL</button>
+    </div>
+
+    <a href="#follow" class="follow-btn" data-i18n="followBtn">Follow Spuddy</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="floating-elements">
+    <span class="cloud cloud1"></span>
+    <span class="cloud cloud2"></span>
+    <span class="cloud cloud3"></span>
+
+    <span class="shape heart h1">♡</span>
+    <span class="shape heart h2">♡</span>
+    <span class="shape heart h3">♡</span>
+
+    <span class="shape star s1">☆</span>
+    <span class="shape star s2">☆</span>
+    <span class="shape star s3">☆</span>
+    <span class="shape star s4">☆</span>
+  </div>
+
+  <div class="hero-text">
+    <img src="images/logo.png" alt="Hello Spuddy" class="main-logo">
+
+    <h2 data-i18n="heroTitle">Big feelings.<br>Little adventures.</h2>
+
+    <p data-i18n="heroText">
+      Stories that help little readers explore emotions, build confidence
+      and discover the world around them.
+    </p>
+
+    <a href="#books" class="main-btn" data-i18n="heroButton">Meet Spuddy ♡</a>
+  </div>
+
+  <div class="hero-image">
+    <img src="images/spuddy.png" alt="Spuddy" class="big-spuddy">
+  </div>
+</section>
+
+<section class="books-section" id="books">
+  <h2 class="section-title" data-i18n="booksTitle">☆ Meet the books! ☆</h2>
+
+  <div class="books-grid">
+    <img src="images/book1.png" alt="Book 1">
+    <img src="images/book2.png" alt="Book 2">
+    <img src="images/book3.png" alt="Book 3">
+    <img src="images/book4.png" alt="Book 4">
+    <img src="images/book5.png" alt="Book 5">
+    <img src="images/book6.png" alt="Book 6">
+    <img src="images/book7.png" alt="Book 7">
+    <img src="images/book8.png" alt="Book 8">
+    <img src="images/book9.png" alt="Book 9">
+  </div>
+
+  <a href="#" class="amazon-btn" data-i18n="amazonButton">View all books on Amazon</a>
+</section>
+
+<section class="features">
+  <div class="feature">
+    <div class="icon">📘</div>
+    <h3 data-i18n="feature1Title">Stories for little readers</h3>
+    <p data-i18n="feature1Text">Simple, heartwarming stories children can relate to.</p>
+  </div>
+
+  <div class="feature">
+    <div class="icon">💗</div>
+    <h3 data-i18n="feature2Title">Big feelings, little adventures</h3>
+    <p data-i18n="feature2Text">Helping kids understand emotions and feel less alone.</p>
+  </div>
+
+  <div class="feature">
+    <div class="icon">⭐</div>
+    <h3 data-i18n="feature3Title">Perfect for bedtime</h3>
+    <p data-i18n="feature3Text">Great for parents, teachers and little dreamers.</p>
+  </div>
+
+  <div class="feature">
+    <div class="icon">🌈</div>
+    <h3 data-i18n="feature4Title">New books coming soon</h3>
+    <p data-i18n="feature4Text">Stay tuned for more adventures with Spuddy.</p>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div>
+    <h2 data-i18n="aboutTitle">Meet Spuddy ♡</h2>
+    <p data-i18n="aboutText1">
+      Spuddy is a little character with big feelings. Sometimes happy,
+      sometimes scared, sometimes angry and sometimes just bored.
+    </p>
+    <p data-i18n="aboutText2">
+      Through simple stories, Spuddy helps children talk about their feelings
+      and learn that it is okay to feel everything.
+    </p>
+  </div>
+
+  <img src="images/spuddy.png" alt="Spuddy">
+</section>
+
+<section class="contact-section" id="contact">
+  <h2 data-i18n="contactTitle">Contact Spuddy</h2>
+  <p data-i18n="contactText">
+    Have a question, idea or want to say hello? Send a message!
+  </p>
+
+  <form class="contact-form"
+      action="https://api.web3forms.com/submit"
+      method="POST"
+      target="hidden_iframe"
+      onsubmit="showFormMessage()">
+
+    <input type="hidden"
+           name="access_key"
+           value="de838ade-cd23-400a-8c38-801403afde8f">
+
+    <input type="hidden"
+           name="subject"
+           value="New message from Hello Spuddy website">
+
+    <input type="hidden"
+           name="from_name"
+           value="Hello Spuddy Website">
+
+    <input type="hidden"
+           name="redirect"
+           value="http://127.0.0.1:5500/index.html#contact">
+
+    <input type="text"
+           name="name"
+           data-i18n-placeholder="contactName"
+           placeholder="Your name"
+           required>
+
+    <input type="email"
+           name="email"
+           data-i18n-placeholder="contactEmail"
+           placeholder="Your email"
+           required>
+
+    <textarea name="message"
+              rows="6"
+              data-i18n-placeholder="contactMessage"
+              placeholder="Your message"
+              required></textarea>
+
+<button type="submit"
+        data-i18n="contactButton">
+  Send message
+</button>
+
+<p class="form-status" id="formStatus" data-i18n="formSuccess">
+  Thank you! Your message has been sent successfully.
+</p>
+
+<iframe name="hidden_iframe" style="display:none;"></iframe>
+  </form>
+</section>
+
+<footer>
+  <div class="footer-spuddy">
+    <img src="images/spuddy.png" alt="Spuddy">
+  </div>
+
+  <div>
+    <h3 data-i18n="stayTitle">Let's stay in touch!</h3>
+    <p data-i18n="stayText">News about books, coloring pages and little surprises.</p>
+
+    <div class="email-box">
+      <input type="email" data-i18n-placeholder="emailPlaceholder" placeholder="Your email address">
+      <button data-i18n="subscribeButton">Subscribe</button>
+    </div>
+  </div>
+
+  <div class="social" id="follow">
+    <h3 data-i18n="socialTitle">Follow Spuddy</h3>
+
+    <div class="social-icons">
+      <a href="mailto:hellospuddy@gmail.com" class="mail" title="Email">
+        <i class="fas fa-envelope"></i>
+      </a>
+
+      <a href="https://instagram.com/hellospuddy" target="_blank" rel="noopener noreferrer" class="instagram" title="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+
+      <a href="https://facebook.com/hellospuddy" target="_blank" rel="noopener noreferrer" class="facebook" title="Facebook">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
