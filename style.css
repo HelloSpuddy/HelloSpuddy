@@ -767,10 +767,11 @@ footer p{
     box-shadow:0 8px 20px rgba(0,0,0,.08);
 }
 .footer-copyright{
+    flex-basis:100%;
     width:100%;
     text-align:center;
-    margin-top:35px;
-    padding-top:20px;
+    margin-top:20px;
+    padding-top:18px;
     border-top:1px solid rgba(18,52,90,.15);
     color:#12345a;
     font-size:14px;
