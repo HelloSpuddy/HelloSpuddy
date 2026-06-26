@@ -149,6 +149,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const brevoLanguage = document.getElementById("brevoLanguage");
 
     const currentLanguage = localStorage.getItem("language") || "en";
+    const brevoActionEN = "https://7d89f763.sibforms.com/serve/MUIFACmPbBdyZJCuIo4eiw8wBVNkvwBtADZBP6Kzd8HbsU40AGvHYed0l9bCM2JG63EcRko44aw7A8lAut3eK1sLddQdU_FopnUaZFL3o-1AImXBp4AuLPjvkX-84p_iw-IlalAtLmn_THVOh4ROY7mx1mSQZqwS-P9wslWzLPOrbCfU1xDIFXwPKDdXRZ4atg8bvMc9Qxp41icZAA==";
+
+const brevoActionPL = "https://7d89f763.sibforms.com/serve/MUIFALE-gJYjSre7w36urThTcvC6S436IcXVXi9EohdO_lotg6qjmb2zyJh-_yyOrRU83THjJ0BBP0kovhs1XNYBFWYe6JJMOOS7bUb4VYArxqyIM-uV0pmGvoRECaEPTwSrJXRMflJD0fddARHMxJgXZX4DykEDoZ29h76PuaOUdED7OXt0pT1kTb6LkoGEUlQ48qwMXK-uul3lOA==";
     const emailValue = emailInput.value.trim();
 
     if (!emailValue) {
@@ -182,9 +185,11 @@ document.addEventListener("DOMContentLoaded", function () {
     newsletterSending = true;
     newsletterButton.disabled = true;
 
-    brevoEmail.value = emailValue;
-    brevoConsent.checked = true;
-    brevoLocale.value = currentLanguage;
+    brevoForm.action = currentLanguage === "pl" ? brevoActionPL : brevoActionEN;
+
+brevoEmail.value = emailValue;
+brevoConsent.checked = true;
+brevoLocale.value = currentLanguage;
     brevoLanguage.value = currentLanguage.toUpperCase();
 
     status.innerHTML = currentLanguage === "pl"
