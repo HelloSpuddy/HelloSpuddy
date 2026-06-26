@@ -531,8 +531,9 @@ footer p{
 
 .email-box{
   display:flex;
-  gap:12px;
-  margin-top:18px;
+  align-items:center;
+  gap:15px;
+  flex-wrap:nowrap;
 }
 
 .email-box input{
@@ -776,24 +777,27 @@ footer p{
     font-size:14px;
 }
 .newsletter-consent{
-  display:flex;
-  align-items:flex-start;
-  gap:10px;
-  margin-top:14px;
+  display:block;
+  margin-top:10px;
   max-width:520px;
-  font-size:14px;
-  line-height:1.4;
+  font-size:13px;
+  line-height:1.35;
   color:#07345f;
+  text-align:left;
+  clear:both;
 }
 
 .newsletter-consent input{
-  margin-top:3px;
+  margin-right:6px;
   accent-color:#7b4de2;
 }
 
 .newsletter-status{
-  margin-top:12px;
+  display:block;
+  width:100%;
+  margin-top:10px;
   font-size:14px;
   font-weight:700;
   color:#7b4de2;
+  text-align:left;
 }
