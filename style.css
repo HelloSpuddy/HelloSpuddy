@@ -834,3 +834,53 @@ footer p{
     text-align:left;
   }
 }
+const newsletterButton = document.getElementById("newsletterButton");
+
+if (newsletterButton) {
+  newsletterButton.addEventListener("click", function () {
+    const emailInput = document.getElementById("newsletterEmail");
+    const consentInput = document.getElementById("newsletterConsent");
+    const status = document.getElementById("newsletterStatus");
+
+    const brevoForm = document.getElementById("brevoHiddenForm");
+    const brevoEmail = document.getElementById("brevoEmail");
+    const brevoConsent = document.getElementById("brevoConsent");
+    const brevoLocale = document.getElementById("brevoLocale");
+
+    const currentLanguage = localStorage.getItem("language") || "en";
+
+    if (!emailInput.value.trim()) {
+      status.innerHTML = currentLanguage === "pl"
+        ? "Podaj adres e-mail."
+        : "Please enter your email address.";
+      return;
+    }
+
+    if (!emailInput.checkValidity()) {
+      status.innerHTML = currentLanguage === "pl"
+        ? "Podaj poprawny adres e-mail."
+        : "Please enter a valid email address.";
+      return;
+    }
+
+    if (!consentInput.checked) {
+      status.innerHTML = currentLanguage === "pl"
+        ? "Zaznacz zgodę na zapis do newslettera."
+        : "Please agree to receive Hello Spuddy news.";
+      return;
+    }
+
+    brevoEmail.value = emailInput.value.trim();
+    brevoConsent.checked = true;
+    brevoLocale.value = currentLanguage;
+
+    brevoForm.submit();
+
+    status.innerHTML = currentLanguage === "pl"
+      ? "💜 Dziękujemy! Sprawdź skrzynkę e-mail i potwierdź zapis."
+      : "💜 Thank you! Please check your email and confirm your subscription.";
+
+    emailInput.value = "";
+    consentInput.checked = false;
+  });
+}
