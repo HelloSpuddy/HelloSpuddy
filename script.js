@@ -88,11 +88,11 @@ const translations = {
   }
 };
 
-function setLanguage(language){
+function setLanguage(language) {
   document.querySelectorAll("[data-i18n]").forEach(element => {
     const key = element.getAttribute("data-i18n");
 
-    if(translations[language][key]){
+    if (translations[language] && translations[language][key]) {
       element.innerHTML = translations[language][key];
     }
   });
@@ -100,7 +100,7 @@ function setLanguage(language){
   document.querySelectorAll("[data-i18n-placeholder]").forEach(element => {
     const key = element.getAttribute("data-i18n-placeholder");
 
-    if(translations[language][key]){
+    if (translations[language] && translations[language][key]) {
       element.placeholder = translations[language][key];
     }
   });
@@ -108,19 +108,73 @@ function setLanguage(language){
   localStorage.setItem("language", language);
 }
 
-const savedLanguage = localStorage.getItem("language") || "en";
-setLanguage(savedLanguage);
-function showFormMessage(){
-  setTimeout(function(){
+function showFormMessage() {
+  setTimeout(function () {
     const formStatus = document.getElementById("formStatus");
     const contactForm = document.querySelector(".contact-form");
 
-    if(formStatus){
+    if (formStatus) {
       formStatus.style.display = "block";
     }
 
-    if(contactForm){
+    if (contactForm) {
       contactForm.reset();
     }
   }, 700);
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+  const savedLanguage = localStorage.getItem("language") || "en";
+  setLanguage(savedLanguage);
+
+  const newsletterButton = document.getElementById("newsletterButton");
+
+  if (!newsletterButton) return;
+
+  newsletterButton.addEventListener("click", function () {
+    const emailInput = document.getElementById("newsletterEmail");
+    const consentInput = document.getElementById("newsletterConsent");
+    const status = document.getElementById("newsletterStatus");
+
+    const brevoForm = document.getElementById("brevoHiddenForm");
+    const brevoEmail = document.getElementById("brevoEmail");
+    const brevoConsent = document.getElementById("brevoConsent");
+    const brevoLocale = document.getElementById("brevoLocale");
+
+    const currentLanguage = localStorage.getItem("language") || "en";
+
+    if (!emailInput.value.trim()) {
+      status.innerHTML = currentLanguage === "pl"
+        ? "Podaj adres e-mail."
+        : "Please enter your email address.";
+      return;
+    }
+
+    if (!emailInput.checkValidity()) {
+      status.innerHTML = currentLanguage === "pl"
+        ? "Podaj poprawny adres e-mail."
+        : "Please enter a valid email address.";
+      return;
+    }
+
+    if (!consentInput.checked) {
+      status.innerHTML = currentLanguage === "pl"
+        ? "Zaznacz zgodę na zapis do newslettera."
+        : "Please agree to receive Hello Spuddy news.";
+      return;
+    }
+
+    brevoEmail.value = emailInput.value.trim();
+    brevoConsent.checked = true;
+    brevoLocale.value = currentLanguage;
+
+    brevoForm.submit();
+
+    status.innerHTML = currentLanguage === "pl"
+      ? "💜 Dziękujemy! Sprawdź skrzynkę e-mail i potwierdź zapis."
+      : "💜 Thank you! Please check your email and confirm your subscription.";
+
+    emailInput.value = "";
+    consentInput.checked = false;
+  });
+});
