@@ -168,14 +168,16 @@ document.addEventListener("DOMContentLoaded", function () {
     brevoConsent.checked = true;
     brevoLocale.value = currentLanguage;
 
-    brevoForm.submit();
-
     status.innerHTML = currentLanguage === "pl"
-      ? "💜 Dziękujemy! Sprawdź skrzynkę e-mail i potwierdź zapis."
-      : "💜 Thank you! Please check your email and confirm your subscription.";
+  ? "💜 Dziękujemy! Sprawdź skrzynkę e-mail i potwierdź zapis."
+  : "💜 Thank you! Please check your email and confirm your subscription.";
 
-    emailInput.value = "";
-    consentInput.checked = false;
+brevoForm.submit();
+
+setTimeout(function () {
+  emailInput.value = "";
+  consentInput.checked = false;
+}, 1000);
   });
 });
 const newsletterButton = document.getElementById("newsletterButton");
