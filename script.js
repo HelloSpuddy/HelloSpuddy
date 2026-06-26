@@ -146,6 +146,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const brevoEmail = document.getElementById("brevoEmail");
     const brevoConsent = document.getElementById("brevoConsent");
     const brevoLocale = document.getElementById("brevoLocale");
+    const brevoLanguage = document.getElementById("brevoLanguage");
 
     const currentLanguage = localStorage.getItem("language") || "en";
     const emailValue = emailInput.value.trim();
@@ -184,6 +185,7 @@ document.addEventListener("DOMContentLoaded", function () {
     brevoEmail.value = emailValue;
     brevoConsent.checked = true;
     brevoLocale.value = currentLanguage;
+    brevoLanguage.value = currentLanguage.toUpperCase();
 
     status.innerHTML = currentLanguage === "pl"
       ? "💜 Dziękujemy! Sprawdź skrzynkę e-mail i potwierdź zapis."
