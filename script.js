@@ -192,10 +192,8 @@ document.addEventListener("DOMContentLoaded", function () {
     brevoForm.submit();
 
     setTimeout(function () {
-      emailInput.value = "";
-      consentInput.checked = false;
-      newsletterButton.disabled = false;
-      newsletterSending = false;
-    }, 3000);
+  newsletterButton.disabled = false;
+  newsletterSending = false;
+}, 3000);
   });
 });
