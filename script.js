@@ -34,13 +34,16 @@ const translations = {
     contactMessage: "Your message",
     contactButton: "Send message",
 
-    stayTitle: "Let's stay in touch!",
-    stayText: "News about books, coloring pages and little surprises.",
+    stayTitle: "Join the Hello Spuddy Club 💜",
+    stayText: "Be the first to hear about new books, free coloring pages and little surprises.",
     emailPlaceholder: "Your email address",
     subscribeButton: "Subscribe",
     socialTitle: "Follow Spuddy",
     formSuccess: "💜 Thank you for reaching out!<br>Spuddy has received your message and will get back to you soon.",
-    newsletterConsent: "I agree to receive Hello Spuddy news."
+    newsletterConsent: "I agree to receive Hello Spuddy news and accept the Privacy Policy.",
+    privacyLink: "Privacy Policy",
+    termsLink: "Terms of Use",
+    backHome: "Back to homepage"
   },
 
   pl: {
@@ -78,13 +81,16 @@ const translations = {
     contactMessage: "Twoja wiadomość",
     contactButton: "Wyślij wiadomość",
 
-    stayTitle: "Zostańmy w kontakcie!",
-    stayText: "Nowości o książkach, kolorowankach i małych niespodziankach.",
+    stayTitle: "Dołącz do Klubu Hello Spuddy 💜",
+    stayText: "Otrzymuj informacje o nowych książkach, darmowych kolorowankach i małych niespodziankach.",
     emailPlaceholder: "Twój adres e-mail",
     subscribeButton: "Zapisz się",
     socialTitle: "Obserwuj Spuddy’ego",
     formSuccess: "💜 Dziękujemy za kontakt!<br>Spuddy otrzymał Twoją wiadomość i wkrótce się odezwie.",
-    newsletterConsent: "Zgadzam się na wiadomości od Hello Spuddy."
+    newsletterConsent: "Zgadzam się na wiadomości od Hello Spuddy i akceptuję Politykę prywatności.",
+    privacyLink: "Polityka prywatności",
+    termsLink: "Regulamin",
+    backHome: "Wróć na stronę główną"
   }
 };
 
@@ -103,6 +109,10 @@ function setLanguage(language) {
     if (translations[language] && translations[language][key]) {
       element.placeholder = translations[language][key];
     }
+  });
+
+  document.querySelectorAll("[data-lang-section]").forEach(section => {
+    section.style.display = section.getAttribute("data-lang-section") === language ? "block" : "none";
   });
 
   localStorage.setItem("language", language);
@@ -186,14 +196,13 @@ document.addEventListener("DOMContentLoaded", function () {
     newsletterButton.disabled = true;
 
     brevoForm.action = currentLanguage === "pl" ? brevoActionPL : brevoActionEN;
-
     brevoEmail.value = emailValue;
     brevoConsent.checked = true;
     brevoLocale.value = currentLanguage;
 
     status.innerHTML = currentLanguage === "pl"
-      ? "💜 Dziękujemy! Sprawdź skrzynkę e-mail i potwierdź zapis."
-      : "💜 Thank you! Please check your email and confirm your subscription.";
+      ? "💜 Witamy w rodzinie Hello Spuddy! Sprawdź swoją skrzynkę i kliknij link potwierdzający."
+      : "💜 Welcome to the Hello Spuddy family! Please check your inbox and click the confirmation link.";
 
     brevoForm.submit();
 

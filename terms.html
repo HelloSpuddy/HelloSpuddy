@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hello Spuddy</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <a href="index.html"><img src="images/Spuddy.png" alt="Spuddy" class="mini-spuddy"></a>
+    <a href="index.html"><img src="images/Logo.png" alt="Hello Spuddy" class="mini-logo"></a>
+  </div>
+
+  <nav>
+    <a href="index.html" data-i18n="navHome">Home</a>
+    <a href="index.html#books" data-i18n="navBooks">Books</a>
+    <a href="index.html#about" data-i18n="navAbout">About Spuddy</a>
+    <a href="index.html#coloring" data-i18n="navColoring">Coloring Pages</a>
+    <a href="index.html#contact" data-i18n="navContact">Contact</a>
+  </nav>
+
+  <div class="header-right">
+    <div class="language-switcher">
+      <button onclick="setLanguage('en')">EN</button>
+      <button onclick="setLanguage('pl')">PL</button>
+    </div>
+
+    <a href="index.html#follow" class="follow-btn" data-i18n="followBtn">Follow Spuddy</a>
+  </div>
+</header>
+
+<section class="legal-page">
+  <div class="legal-card">
+    <div data-lang-section="en">
+      <h1>Terms of Use</h1>
+      <p class="legal-date">Last updated: 26 June 2026</p>
+
+      <p>These Terms of Use explain the basic rules for using the Hello Spuddy™ website.</p>
+
+      <h2>1. Website purpose</h2>
+      <p>This website presents Hello Spuddy books, characters, news, coloring pages and related content for parents, teachers and little readers.</p>
+
+      <h2>2. Intellectual property</h2>
+      <p>All names, characters, illustrations, graphics, texts, logos and book materials published on this website belong to Hello Spuddy™ or are used with permission. You may not copy, reproduce, distribute or use them commercially without prior written permission.</p>
+
+      <h2>3. Permitted use</h2>
+      <p>You may browse the website, contact us and subscribe to the newsletter. You agree not to misuse the website, interfere with its operation or use the content in a way that infringes rights or applicable law.</p>
+
+      <h2>4. External links</h2>
+      <p>The website may contain links to external websites such as Amazon, Instagram or Facebook. We are not responsible for the content, availability or privacy practices of external websites.</p>
+
+      <h2>5. No professional advice</h2>
+      <p>The content on this website is for general informational and promotional purposes. It is not medical, psychological, educational or legal advice.</p>
+
+      <h2>6. Changes to the website</h2>
+      <p>We may update, change or remove website content at any time.</p>
+
+      <h2>7. Contact</h2>
+      <p>If you have questions about these Terms of Use, contact us at: <strong>hellospuddy@gmail.com</strong>.</p>
+
+      <a href="index.html" class="back-home" data-i18n="backHome">Back to homepage</a>
+    </div>
+
+    <div data-lang-section="pl">
+      <h1>Regulamin strony</h1>
+      <p class="legal-date">Ostatnia aktualizacja: 26 czerwca 2026 r.</p>
+
+      <p>Niniejszy regulamin określa podstawowe zasady korzystania ze strony Hello Spuddy™.</p>
+
+      <h2>1. Cel strony</h2>
+      <p>Strona prezentuje książki, postacie, aktualności, kolorowanki i inne treści związane z Hello Spuddy, skierowane do rodziców, nauczycieli i małych czytelników.</p>
+
+      <h2>2. Własność intelektualna</h2>
+      <p>Wszystkie nazwy, postacie, ilustracje, grafiki, teksty, logo i materiały książkowe publikowane na stronie należą do Hello Spuddy™ lub są wykorzystywane za zgodą uprawnionych podmiotów. Nie wolno ich kopiować, rozpowszechniać ani wykorzystywać komercyjnie bez wcześniejszej pisemnej zgody.</p>
+
+      <h2>3. Dozwolone korzystanie</h2>
+      <p>Możesz przeglądać stronę, kontaktować się z nami i zapisać się do newslettera. Zobowiązujesz się nie nadużywać strony, nie zakłócać jej działania i nie wykorzystywać treści w sposób naruszający prawa lub przepisy.</p>
+
+      <h2>4. Linki zewnętrzne</h2>
+      <p>Strona może zawierać linki do zewnętrznych serwisów, takich jak Amazon, Instagram lub Facebook. Nie odpowiadamy za treści, dostępność ani praktyki prywatności tych serwisów.</p>
+
+      <h2>5. Brak profesjonalnej porady</h2>
+      <p>Treści na stronie mają charakter informacyjny i promocyjny. Nie stanowią porady medycznej, psychologicznej, edukacyjnej ani prawnej.</p>
+
+      <h2>6. Zmiany na stronie</h2>
+      <p>Możemy w dowolnym momencie aktualizować, zmieniać lub usuwać treści dostępne na stronie.</p>
+
+      <h2>7. Kontakt</h2>
+      <p>W sprawach dotyczących regulaminu skontaktuj się z nami: <strong>hellospuddy@gmail.com</strong>.</p>
+
+      <a href="index.html" class="back-home" data-i18n="backHome">Wróć na stronę główną</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-spuddy">
+    <img src="images/Spuddy3.png" alt="Spuddy">
+  </div>
+
+  <div class="footer-newsletter">
+    <h3 data-i18n="stayTitle">Join the Hello Spuddy Club 💜</h3>
+    <p data-i18n="stayText">Be the first to hear about new books, free coloring pages and little surprises.</p>
+
+    <div class="email-box">
+      <input
+        type="email"
+        id="newsletterEmail"
+        data-i18n-placeholder="emailPlaceholder"
+        placeholder="Your email address"
+        required
+      >
+
+      <button
+        type="button"
+        id="newsletterButton"
+        data-i18n="subscribeButton">
+        Subscribe
+      </button>
+    </div>
+
+    <label class="newsletter-consent">
+      <input type="checkbox" id="newsletterConsent">
+      <span data-i18n="newsletterConsent">
+        I agree to receive Hello Spuddy news and accept the Privacy Policy.
+      </span>
+    </label>
+
+    <p class="newsletter-status" id="newsletterStatus"></p>
+  </div>
+
+  <div class="social" id="follow">
+    <h3 data-i18n="socialTitle">Follow Spuddy</h3>
+
+    <div class="social-icons">
+      <a href="mailto:hellospuddy@gmail.com" class="mail" title="Email">
+        <i class="fas fa-envelope"></i>
+      </a>
+
+      <a href="https://instagram.com/hellospuddy" target="_blank" rel="noopener noreferrer" class="instagram" title="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+
+      <a href="https://facebook.com/hellospuddy" target="_blank" rel="noopener noreferrer" class="facebook" title="Facebook">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+    </div>
+  </div>
+
+  <div class="footer-copyright">
+    <p>
+      © 2026 Hello Spuddy™. All rights reserved.
+      <br>
+      <a href="privacy.html" data-i18n="privacyLink">Privacy Policy</a>
+      <span> • </span>
+      <a href="terms.html" data-i18n="termsLink">Terms of Use</a>
+      <br>
+      Made with ❤️ for little readers.
+    </p>
+  </div>
+</footer>
+<iframe name="brevo_hidden_iframe" style="display:none;"></iframe>
+
+<form
+  id="brevoHiddenForm"
+  method="POST"
+  action=""
+  target="brevo_hidden_iframe"
+  style="display:none;"
+>
+  <input type="text" name="EMAIL" id="brevoEmail">
+  <input type="checkbox" name="NEWSLETTER_CONSENT" id="brevoConsent" value="1">
+  <input type="text" name="email_address_check" value="">
+  <input type="hidden" name="locale" id="brevoLocale" value="en">
+</form>
+
+<script src="script.js?v=8"></script>
+
+</body>
+</html>

@@ -834,3 +834,132 @@ footer p{
     text-align:left;
   }
 }
+const newsletterButton = document.getElementById("newsletterButton");
+
+if (newsletterButton) {
+  newsletterButton.addEventListener("click", function () {
+    const emailInput = document.getElementById("newsletterEmail");
+    const consentInput = document.getElementById("newsletterConsent");
+    const status = document.getElementById("newsletterStatus");
+
+    const brevoForm = document.getElementById("brevoHiddenForm");
+    const brevoEmail = document.getElementById("brevoEmail");
+    const brevoConsent = document.getElementById("brevoConsent");
+    const brevoLocale = document.getElementById("brevoLocale");
+
+    const currentLanguage = localStorage.getItem("language") || "en";
+
+    if (!emailInput.value.trim()) {
+      status.innerHTML = currentLanguage === "pl"
+        ? "Podaj adres e-mail."
+        : "Please enter your email address.";
+      return;
+    }
+
+    if (!emailInput.checkValidity()) {
+      status.innerHTML = currentLanguage === "pl"
+        ? "Podaj poprawny adres e-mail."
+        : "Please enter a valid email address.";
+      return;
+    }
+
+    if (!consentInput.checked) {
+      status.innerHTML = currentLanguage === "pl"
+        ? "Zaznacz zgodę na zapis do newslettera."
+        : "Please agree to receive Hello Spuddy news.";
+      return;
+    }
+
+    brevoEmail.value = emailInput.value.trim();
+    brevoConsent.checked = true;
+    brevoLocale.value = currentLanguage;
+
+    brevoForm.submit();
+
+    status.innerHTML = currentLanguage === "pl"
+      ? "💜 Dziękujemy! Sprawdź skrzynkę e-mail i potwierdź zapis."
+      : "💜 Thank you! Please check your email and confirm your subscription.";
+
+    emailInput.value = "";
+    consentInput.checked = false;
+  });
+}
+.footer-copyright a{
+  color:#315bb8;
+  font-weight:bold;
+  text-decoration:none;
+}
+
+.footer-copyright a:hover{
+  color:#7b57d9;
+  text-decoration:underline;
+}
+
+.legal-page{
+  padding:80px 25px;
+  background:
+    radial-gradient(circle at top left,#dff8ff,transparent 35%),
+    radial-gradient(circle at bottom right,#ffe3f3,transparent 35%),
+    #fffdf6;
+}
+
+.legal-card{
+  max-width:980px;
+  margin:0 auto;
+  padding:48px;
+  background:rgba(255,255,255,.9);
+  border-radius:32px;
+  box-shadow:0 14px 35px rgba(0,0,0,.08);
+}
+
+.legal-card h1{
+  font-size:46px;
+  color:#315bb8;
+  margin-bottom:14px;
+}
+
+.legal-card h2{
+  font-size:26px;
+  color:#12345a;
+  margin:34px 0 12px;
+}
+
+.legal-card p,
+.legal-card li{
+  font-size:17px;
+  line-height:1.7;
+  color:#12345a;
+}
+
+.legal-card ul{
+  padding-left:22px;
+  margin-top:10px;
+}
+
+.legal-date{
+  font-size:15px;
+  opacity:.75;
+  margin-bottom:28px;
+}
+
+.back-home{
+  display:inline-block;
+  margin-top:35px;
+  color:#7b57d9;
+  font-weight:bold;
+  text-decoration:none;
+}
+
+.back-home:hover{
+  text-decoration:underline;
+}
+
+@media(max-width:950px){
+  .legal-card{
+    padding:30px 22px;
+  }
+
+  .legal-card h1{
+    font-size:34px;
+  }
+}
