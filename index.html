@@ -198,10 +198,30 @@
     <p data-i18n="stayText">News about books, coloring pages and little surprises.</p>
 
     <div class="email-box">
-      <input type="email" data-i18n-placeholder="emailPlaceholder" placeholder="Your email address">
-      <button data-i18n="subscribeButton">Subscribe</button>
-    </div>
-  </div>
+  <input
+    type="email"
+    id="newsletterEmail"
+    data-i18n-placeholder="emailPlaceholder"
+    placeholder="Your email address"
+    required
+  >
+
+  <button
+    type="button"
+    id="newsletterButton"
+    data-i18n="subscribeButton">
+    Subscribe
+  </button>
+</div>
+
+<label class="newsletter-consent">
+  <input type="checkbox" id="newsletterConsent">
+  <span data-i18n="newsletterConsent">
+    I agree to receive news from Hello Spuddy and accept the privacy policy.
+  </span>
+</label>
+
+<p class="newsletter-status" id="newsletterStatus"></p>
 
   <div class="social" id="follow">
     <h3 data-i18n="socialTitle">Follow Spuddy</h3>

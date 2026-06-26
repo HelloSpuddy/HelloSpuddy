@@ -39,7 +39,8 @@ const translations = {
     emailPlaceholder: "Your email address",
     subscribeButton: "Subscribe",
     socialTitle: "Follow Spuddy",
-    formSuccess: "💜 Thank you for reaching out!<br>Spuddy has received your message and will get back to you soon."
+    formSuccess: "💜 Thank you for reaching out!<br>Spuddy has received your message and will get back to you soon.",
+    newsletterConsent: "I agree to receive news from Hello Spuddy and accept the privacy policy."
   },
 
   pl: {
@@ -82,7 +83,8 @@ const translations = {
     emailPlaceholder: "Twój adres e-mail",
     subscribeButton: "Zapisz się",
     socialTitle: "Obserwuj Spuddy’ego",
-    formSuccess: "💜 Dziękujemy za kontakt!<br>Spuddy otrzymał Twoją wiadomość i wkrótce się odezwie."
+    formSuccess: "💜 Dziękujemy za kontakt!<br>Spuddy otrzymał Twoją wiadomość i wkrótce się odezwie.",
+    newsletterConsent: "Zgadzam się na otrzymywanie wiadomości od Hello Spuddy i akceptuję politykę prywatności."
   }
 };
 
