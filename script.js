@@ -12,7 +12,7 @@ const translations = {
     heroButton: "Meet Spuddy ♡",
 
     booksTitle: "☆ Meet the books! ☆",
-    amazonButton: "View all books on Amazon",
+    amazonButton: "✨ Books Coming Soon",
 
     feature1Title: "Stories for little readers",
     feature1Text: "Simple, heartwarming stories children can relate to.",
@@ -35,12 +35,12 @@ const translations = {
     contactButton: "Send message",
 
     stayTitle: "Join the Hello Spuddy Club 💜",
-    stayText: "Be the first to hear about new books, free coloring pages and little surprises.",
+    stayText: "Be the first to discover new books, free coloring pages and little surprises delivered straight to your inbox.",
     emailPlaceholder: "Your email address",
     subscribeButton: "Subscribe",
     socialTitle: "Follow Spuddy",
     formSuccess: "💜 Thank you for reaching out!<br>Spuddy has received your message and will get back to you soon.",
-    newsletterConsent: "I agree to receive Hello Spuddy news and accept the Privacy Policy.",
+    newsletterConsent: "I would like to receive the Hello Spuddy newsletter with updates, free activities and special surprises.",
     privacyLink: "Privacy Policy",
     termsLink: "Terms of Use",
     backHome: "Back to homepage"
@@ -59,7 +59,7 @@ const translations = {
     heroButton: "Poznaj Spuddy’ego ♡",
 
     booksTitle: "☆ Poznaj książeczki! ☆",
-    amazonButton: "Zobacz książki na Amazon",
+    amazonButton: "✨ Książeczki już wkrótce",
 
     feature1Title: "Historie dla małych czytelników",
     feature1Text: "Proste, ciepłe opowieści, w których dzieci mogą odnaleźć siebie.",
@@ -82,12 +82,12 @@ const translations = {
     contactButton: "Wyślij wiadomość",
 
     stayTitle: "Dołącz do Klubu Hello Spuddy 💜",
-    stayText: "Otrzymuj informacje o nowych książkach, darmowych kolorowankach i małych niespodziankach.",
+    stayText: "Jako pierwszy dowiaduj się o nowych książeczkach, darmowych kolorowankach i małych niespodziankach prosto do swojej skrzynki.",
     emailPlaceholder: "Twój adres e-mail",
     subscribeButton: "Zapisz się",
     socialTitle: "Obserwuj Spuddy’ego",
     formSuccess: "💜 Dziękujemy za kontakt!<br>Spuddy otrzymał Twoją wiadomość i wkrótce się odezwie.",
-    newsletterConsent: "Zgadzam się na wiadomości od Hello Spuddy i akceptuję Politykę prywatności.",
+    newsletterConsent: "Chcę otrzymywać newsletter Hello Spuddy z nowościami, darmowymi materiałami i wyjątkowymi niespodziankami.",
     privacyLink: "Polityka prywatności",
     termsLink: "Regulamin",
     backHome: "Wróć na stronę główną"
@@ -181,7 +181,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!consentInput.checked) {
       status.innerHTML = currentLanguage === "pl"
         ? "Zaznacz zgodę na zapis do newslettera."
-        : "Please agree to receive Hello Spuddy news.";
+        : "Please agree to receive the Hello Spuddy newsletter.";
       return;
     }
 
