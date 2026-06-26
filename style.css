@@ -536,6 +536,37 @@ footer p{
   flex-wrap:nowrap;
 }
 
+.newsletter-consent{
+  display:flex;
+  align-items:flex-start;
+  gap:7px;
+  width:420px;
+  max-width:100%;
+  margin-top:8px;
+  font-size:12px;
+  line-height:1.25;
+  color:#07345f;
+  text-align:left;
+}
+
+.newsletter-consent input{
+  flex:0 0 auto;
+  margin-top:2px;
+  accent-color:#7b4de2;
+}
+
+.newsletter-consent span{
+  display:block;
+}
+
+.newsletter-status{
+  margin-top:8px;
+  font-size:13px;
+  font-weight:700;
+  color:#7b4de2;
+  text-align:left;
+}
+
 .email-box input{
   padding:15px 22px;
   border:none;

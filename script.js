@@ -40,7 +40,7 @@ const translations = {
     subscribeButton: "Subscribe",
     socialTitle: "Follow Spuddy",
     formSuccess: "💜 Thank you for reaching out!<br>Spuddy has received your message and will get back to you soon.",
-    newsletterConsent: "I agree to receive news from Hello Spuddy and accept the privacy policy."
+    newsletterConsent: "I agree to receive Hello Spuddy news."
   },
 
   pl: {
@@ -84,7 +84,7 @@ const translations = {
     subscribeButton: "Zapisz się",
     socialTitle: "Obserwuj Spuddy’ego",
     formSuccess: "💜 Dziękujemy za kontakt!<br>Spuddy otrzymał Twoją wiadomość i wkrótce się odezwie.",
-    newsletterConsent: "Zgadzam się na otrzymywanie wiadomości od Hello Spuddy i akceptuję politykę prywatności."
+    newsletterConsent: "Zgadzam się na wiadomości od Hello Spuddy."
   }
 };
 
