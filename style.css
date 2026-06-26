@@ -537,34 +537,29 @@ footer p{
 }
 
 .newsletter-consent{
-  display:flex;
-  align-items:flex-start;
-  gap:7px;
-  width:420px;
-  max-width:100%;
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
   margin-top:8px;
-  font-size:12px;
-  line-height:1.25;
+  font-size:11px;
+  line-height:1;
   color:#07345f;
-  text-align:left;
+  opacity:.85;
+  white-space:nowrap;
 }
 
 .newsletter-consent input{
-  flex:0 0 auto;
-  margin-top:2px;
+  width:11px;
+  height:11px;
+  margin:0;
   accent-color:#7b4de2;
 }
 
-.newsletter-consent span{
-  display:block;
-}
-
 .newsletter-status{
-  margin-top:8px;
-  font-size:13px;
+  margin-top:6px;
+  font-size:12px;
   font-weight:700;
   color:#7b4de2;
-  text-align:left;
 }
 
 .email-box input{
