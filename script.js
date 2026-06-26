@@ -131,7 +131,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (!newsletterButton) return;
 
-  newsletterButton.addEventListener("click", function () {
+  let newsletterSending = false;
+
+  newsletterButton.addEventListener("click", function (event) {
+    event.preventDefault();
+
+    if (newsletterSending) return;
+
     const emailInput = document.getElementById("newsletterEmail");
     const consentInput = document.getElementById("newsletterConsent");
     const status = document.getElementById("newsletterStatus");
@@ -142,8 +148,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const brevoLocale = document.getElementById("brevoLocale");
 
     const currentLanguage = localStorage.getItem("language") || "en";
+    const emailValue = emailInput.value.trim();
 
-    if (!emailInput.value.trim()) {
+    if (!emailValue) {
       status.innerHTML = currentLanguage === "pl"
         ? "Podaj adres e-mail."
         : "Please enter your email address.";
@@ -164,69 +171,31 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    brevoEmail.value = emailInput.value.trim();
+    if (!brevoForm || !brevoEmail || !brevoConsent || !brevoLocale) {
+      status.innerHTML = currentLanguage === "pl"
+        ? "Wystąpił błąd formularza. Spróbuj ponownie później."
+        : "Form error. Please try again later.";
+      return;
+    }
+
+    newsletterSending = true;
+    newsletterButton.disabled = true;
+
+    brevoEmail.value = emailValue;
     brevoConsent.checked = true;
     brevoLocale.value = currentLanguage;
-
-    status.innerHTML = currentLanguage === "pl"
-  ? "💜 Dziękujemy! Sprawdź skrzynkę e-mail i potwierdź zapis."
-  : "💜 Thank you! Please check your email and confirm your subscription.";
-
-brevoForm.submit();
-
-setTimeout(function () {
-  emailInput.value = "";
-  consentInput.checked = false;
-}, 1000);
-  });
-});
-const newsletterButton = document.getElementById("newsletterButton");
-
-if (newsletterButton) {
-  newsletterButton.addEventListener("click", function () {
-    const emailInput = document.getElementById("newsletterEmail");
-    const consentInput = document.getElementById("newsletterConsent");
-    const status = document.getElementById("newsletterStatus");
-
-    const brevoForm = document.getElementById("brevoHiddenForm");
-    const brevoEmail = document.getElementById("brevoEmail");
-    const brevoConsent = document.getElementById("brevoConsent");
-    const brevoLocale = document.getElementById("brevoLocale");
-
-    const currentLanguage = localStorage.getItem("language") || "en";
-
-    if (!emailInput.value.trim()) {
-      status.innerHTML = currentLanguage === "pl"
-        ? "Podaj adres e-mail."
-        : "Please enter your email address.";
-      return;
-    }
-
-    if (!emailInput.checkValidity()) {
-      status.innerHTML = currentLanguage === "pl"
-        ? "Podaj poprawny adres e-mail."
-        : "Please enter a valid email address.";
-      return;
-    }
-
-    if (!consentInput.checked) {
-      status.innerHTML = currentLanguage === "pl"
-        ? "Zaznacz zgodę na zapis do newslettera."
-        : "Please agree to receive Hello Spuddy news.";
-      return;
-    }
-
-    brevoEmail.value = emailInput.value.trim();
-    brevoConsent.checked = true;
-    brevoLocale.value = currentLanguage;
-
-    brevoForm.submit();
 
     status.innerHTML = currentLanguage === "pl"
       ? "💜 Dziękujemy! Sprawdź skrzynkę e-mail i potwierdź zapis."
       : "💜 Thank you! Please check your email and confirm your subscription.";
 
-    emailInput.value = "";
-    consentInput.checked = false;
+    brevoForm.submit();
+
+    setTimeout(function () {
+      emailInput.value = "";
+      consentInput.checked = false;
+      newsletterButton.disabled = false;
+      newsletterSending = false;
+    }, 3000);
   });
-}
+});
